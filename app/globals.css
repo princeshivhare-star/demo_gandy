@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'DM Sans', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --primary: #0066CC;
+  --primary-dark: #004fa3;
+  --primary-light: #E8F4FD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #1a2332;
+  background-color: #f8fafc;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-blue-50 text-blue-600 font-semibold px-6 py-3 rounded-lg border-2 border-blue-600 transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+  
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-gray-900 font-display;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+}
+
+/* Product card animations */
+.product-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #0066CC 0%, #004fa3 40%, #003380 100%);
+}
+
+/* Medical cross pattern for backgrounds */
+.medical-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 102, 204, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(0, 168, 107, 0.06) 0%, transparent 60%);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0066CC;
+}
+
+/* Toast notification */
+.toast-enter {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Category card hover */
+.category-card {
+  transition: all 0.2s ease;
+}
+.category-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Star rating */
+.star-filled { color: #f59e0b; }
+.star-empty { color: #e2e8f0; }
